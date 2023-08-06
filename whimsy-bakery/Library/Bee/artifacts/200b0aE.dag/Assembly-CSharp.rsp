@@ -369,12 +369,16 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/Scripts/Cauldron.cs"
+"Assets/Scripts/Container.cs"
 "Assets/Scripts/Interactable.cs"
-"Assets/Scripts/ItemManagement/Inventory.cs"
 "Assets/Scripts/ItemManagement/Item.cs"
 "Assets/Scripts/ItemManagement/ItemDatabase.cs"
-"Assets/Scripts/PlayerInteractor.cs"
+"Assets/Scripts/ItemManagement/PlayerInventory.cs"
+"Assets/Scripts/Order.cs"
 "Assets/Scripts/PlayerMovement.cs"
+"Assets/Scripts/WorldObject.cs"
+"Assets/Scripts/WorldObjectDatabase.cs"
 -langversion:9.0
 
 /deterministic

@@ -5,34 +5,35 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private int baseSpeed = 5;
-    public float speedModifier = 1f;
+    public float speedMod = 1f;
     private Rigidbody2D playerBody;
-    private Vector2 velocity;
-    private Vector2 inputMovement;
+    private float vertical;
+    private float horizontal;
+    private bool canMove = true;
 
-    public void SetPlayerSpeedModifier(float speedModifier)
+    public void SetPlayerSpeedModifier(float speedMod)
     {
-        this.speedModifier = speedModifier;
+        this.speedMod = speedMod;
     }
 
     private void Start()
     {
         playerBody = GetComponent<Rigidbody2D>();
-        velocity = new Vector2(baseSpeed, baseSpeed);
     }
 
     private void Update()
     {
-        inputMovement = new Vector2(
-            Input.GetAxisRaw("Horizontal"),
-            Input.GetAxisRaw("Vertical")
-            );
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
     }
 
     private void FixedUpdate()
     {
-        Vector2 delta = inputMovement * velocity * Time.deltaTime * speedModifier;
-        Vector2 newPosition = playerBody.position + delta;
-        playerBody.MovePosition(newPosition);
+        if(canMove)
+        {
+            playerBody.velocity = new Vector2(horizontal * baseSpeed * speedMod,
+            vertical * baseSpeed * speedMod);
+        }
+        
     }
 }

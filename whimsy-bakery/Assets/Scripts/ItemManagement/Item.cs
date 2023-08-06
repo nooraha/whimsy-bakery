@@ -1,30 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Item 
 {
     public string title;
-    public string internal_name;
+    public string internalName;
     public int id;
     public string description;
     public Sprite sprite;
     public Dictionary<string, int> stats = new Dictionary<string, int>();
 
-    public Item(string title, string internal_name, int id, string description, Dictionary<string, int> stats)
+    public Item(string title, string internalName, int id, string description,
+        Dictionary<string, int> stats)
     {
         this.title = title;
-        this.internal_name = internal_name;
+        this.internalName = internalName;
         this.id = id;
         this.description = description;
-        sprite = Resources.Load<Sprite>("Textures/" + internal_name);
+        sprite = Resources.Load<Sprite>("Textures/ItemSprites" + internalName);
         this.stats = stats;
     }
 
     public override string ToString()
     {
-        return "name: " + internal_name + "   id: " + id;
+        return "item / name: " + internalName + " / id: " + id;
     }
 
 }
